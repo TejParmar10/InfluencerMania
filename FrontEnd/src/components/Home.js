@@ -22,9 +22,9 @@ const Home = () => {
     return (
       <>
         <Navbar/>
-        <Routes>
+        {/* <Routes>
           <Route path="/ourpeople"></Route>
-        </Routes>
+        </Routes> */}
         <section classNameName="hero-section">
         <div className="row">
           {/* <Jumbotron> */}
@@ -36,10 +36,10 @@ const Home = () => {
               product (service). Our influencer marketing experts unite brands with top 50,000+ content creators, social
               media influencers, artists and bloggers with interested viewers (potential customers) for executing remarkable
               influencer marketing campaigns.</p>
-            <div className="banner-cta">
+            {/* <div className="banner-cta">
               <a onclick="return redirectToCreator()" className="btn btn-info">I am a Creator</a>
               <a onclick="return redirectToBrand()" className="btn btn-danger">I am a Brand</a>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="col-md-5 col-lg-5">

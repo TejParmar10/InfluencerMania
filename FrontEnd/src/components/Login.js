@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
-// import Link from '@mui/material/Link';
+import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,9 +10,9 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
-// import Home from "./Home";
+import Home from "./Home";
 import ReactDOM from "react-dom";
-import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const Login = () => {
   const paperStyle = {
     padding: 20,
@@ -28,12 +28,10 @@ const Login = () => {
   const remStyle = { margin: "10px 0px" };
   return (
     <>
-{/* <Router>
-  <Routes>
-  <Route path="/" element={<Home/>}>
-    </Route>
-  </Routes>
-</Router> */}
+      {/* <Router> */}
+        <Routes>
+          <Route path="/" element={Home}/>
+          </Routes>
       <Grid>
         <Paper elevation={10} style={paperStyle}>
           <Grid align="center">
@@ -71,15 +69,18 @@ const Login = () => {
             className="Signinbtn"
             style={btnstyle}
           >
-            Sign in
+            Log in
           </Button>
+          <Link to="/about">
           <Grid align="center">
             <Avatar style={avatarStyle}>
-              <HomeOutlinedIcon/>
+                        <HomeOutlinedIcon />
             </Avatar>
           </Grid>
+          </Link>``
         </Paper>
       </Grid>
+      {/* </Router> */}
     </>
   );
 };

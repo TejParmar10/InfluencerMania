@@ -20,7 +20,6 @@ const Navbar = (props) => {
             <span>M</span>ania
           </h2>
         </div>
-
         {/* 2nd menu part  */}
         <div
           className={
