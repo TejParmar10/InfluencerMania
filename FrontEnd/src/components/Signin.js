@@ -24,7 +24,7 @@ const Signin = () => {
   const btnstyle = { backgroundColor: "#867FF4", margin: "10px 0px" };
   return (
     <>
-    <Form action="/signin" method="POST">
+    <Form action="signin" method="POST">
       <Grid>
         <Paper elevation={10} style={paperStyle}>
           <Grid align="center">
