@@ -5,13 +5,19 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static('FrontEnd'));
 app.use(bodyParser.urlencoded({ 
-    extended: false
+    extended: true
 }));
 mongoose.connect('mongodb://127.0.0.1/InfluencerMania');
 var db=mongoose.connection;
     db.on('error',()=>console.log("Error in Connecting to the database"));
 if(db.once('open',()=>console.log("Connected to the database")));
-app.post("/sign_up",(req,res) => {
+app.get("/Signin",(req,res) => {
+  return res.render('Signin');
+});
+app.get("/Home",(req,res) => {
+  return res.render('Home');
+});
+app.post("/Signin",(req,res) => {
   var fname=req.body.fname;
   var lname=req.body.lname;
   var uname=req.body.uname;
@@ -22,19 +28,21 @@ app.post("/sign_up",(req,res) => {
       "uname":uname,
       "pass":pass
   }
+  console.log(fname,lname,pass);
   db.collection('signup').insertOne(data,(err,collection) => {
       if(err) {
-          throw  err;
+          console.log(err);
       }
       console.log("Record inserted  succesfully");
   });
-  return res.redirect('Home.js');
+  return res.redirect('/');
 })
+
 app.get("/", (req, res) => {
     res.set({
       "Allow-access-Allow-Origin": "*",
     });
-    return res.redirect('Sigin.js');
+    return res.redirect('/');
   })
   .listen(3000);
 console.log("Listening on port 3000");
