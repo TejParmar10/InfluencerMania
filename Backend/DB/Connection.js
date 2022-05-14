@@ -8,7 +8,8 @@ app.use(express.static(path.join(__dirname, '../../FrontEnd/build/')));
 app.use(bodyParser.urlencoded({ 
     extended: true
 }));
-mongoose.connect('mongodb://127.0.0.1/InfluencerMania');
+// mongoose.connect('mongodb://127.0.0.1/InfluencerMania');
+mongoose.connect('mongodb+srv://tejparmar:dw8OEUi6FlvEuOgO@cluster0.jmmdj.mongodb.net/InfluencerMania', {useNewUrlParser: true, useUnifiedTopology: true});
 var db=mongoose.connection;
     db.on('error',()=>console.log("Error in Connecting to the database"));
 if(db.once('open',()=>console.log("Connected to the database")));
